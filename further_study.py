@@ -99,7 +99,11 @@ def custom_insert(input_list, index, value):
 
     """
 
-    pass
+    input_list[:index] += [value]
+
+
+
+ 
 
 
 def custom_remove(input_list, value):
@@ -111,14 +115,18 @@ def custom_remove(input_list, value):
 
     For example:
 
-        >>> notes = ['Do', 'Re', 'Mi', 'Fa', 'So', 'La', 'Ti', 'Do']
-        >>> custom_remove(notes, 'Do')
-        >>> notes == ['Re', 'Mi', 'Fa', 'So', 'La', 'Ti', 'Do']
+        >>> notes = ['Do', 'Re', 'Mi', 'Fa', 'So', 'La', 'Re', 'Do']
+        >>> custom_remove(notes, 'Re')
+        >>> notes == ['Do', 'Mi', 'Fa', 'So', 'La', 'Re', 'Do']
         True
 
     """
-
-    pass
+    index = 0
+    for val in input_list:
+        if val == value:
+            del input_list[index]
+            break
+        index+=1
 
 
 def custom_pop(input_list):
@@ -137,7 +145,11 @@ def custom_pop(input_list):
 
     """
 
-    return None
+    last = input_list[-1]
+    
+    del input_list[-1]
+    
+    return last
 
 
 def custom_index(input_list, value):
@@ -153,7 +165,13 @@ def custom_index(input_list, value):
 
     """
 
-    return 0
+    index = 0
+    for val in input_list:
+        if val == value:
+            return index
+        index+=1
+    
+    
 
 
 def custom_count(input_list, value):
