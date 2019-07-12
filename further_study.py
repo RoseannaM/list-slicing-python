@@ -209,6 +209,8 @@ def custom_reverse(input_list):
     del input_list[:]
 
     input_list += test
+    #Is equivilent to input_list = input_list.__iadd__(test)
+    #input_list.__iadd__(test) or input_list.extend(test)
     
 
 
