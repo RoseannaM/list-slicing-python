@@ -170,7 +170,7 @@ def custom_index(input_list, value):
         if val == value:
             return index
         index+=1
-    
+
     
 
 
@@ -205,8 +205,11 @@ def custom_reverse(input_list):
         True
 
     """
+    test = input_list[::-1]
+    del input_list[:]
 
-    pass
+    input_list += test
+    
 
 
 def custom_contains(input_list, value):
